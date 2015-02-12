@@ -62,3 +62,32 @@ _colorEast = [east] call BIS_fnc_sidecolor;
 
 // Init for Random IEDs
 [] spawn {call compile preprocessFileLineNumbers "EPD\Ied_Init.sqf";};
+
+if ( (side player) == east ) then
+{
+	waitUntil {!isNil {ELAPSED_TIME_TASK02}}; 
+	if!(isDedicated) then
+	{
+		[] spawn 
+		{
+			while{ELAPSED_TIME_TASK02 < END_TIME_TASK02 } do
+			{
+			    _time = END_TIME_TASK02 - ELAPSED_TIME_TASK02;
+				_finish_time_minutes = floor(_time / 60);
+				_finish_time_seconds = floor(_time) - (60 * _finish_time_minutes);
+				if(_finish_time_seconds < 10) then
+				{
+					_finish_time_seconds = format ["0%1", _finish_time_seconds];
+				};
+				if(_finish_time_minutes < 10) then
+				{
+					_finish_time_minutes = format ["0%1", _finish_time_minutes];
+				};
+				_formatted_time = format ["%1:%2", _finish_time_minutes, _finish_time_seconds];
+				
+				hintSilent format ["Time left to bring the target to the safe house:\n%1", _formatted_time];
+				sleep 1;
+			};
+		};
+	};
+};
