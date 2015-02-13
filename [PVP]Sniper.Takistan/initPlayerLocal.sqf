@@ -61,7 +61,7 @@ _colorEast = [east] call BIS_fnc_sidecolor;
 ] call BIS_fnc_establishingShot;
 
 // Init for Random IEDs
-[] spawn {call compile preprocessFileLineNumbers "EPD\Ied_Init.sqf";};
+//[] spawn {call compile preprocessFileLineNumbers "EPD\Ied_Init.sqf";};
 
 if ( (side player) == east ) then
 {

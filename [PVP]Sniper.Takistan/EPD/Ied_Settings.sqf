@@ -65,7 +65,11 @@ allowExplosiveToTriggerIEDs = true;
 //http://community.bistudio.com/wiki/side
 
 iedInitialArray = [
-	
+		["M_IED", 15,[85, 7, 4, 4], "west"],
+		["M_IED_1", 5,[85, 7, 4, 4], "west"],
+		["M_IED_2", 15,[85, 7, 4, 4], "west"],
+		["M_IED_3", 15,[85, 7, 4, 4], "west"],
+		["M_IED_4", 20,[85, 7, 4, 4], "west"]
 	];
 	
 //Place the mapLocations, predefinedLocations, and markerNames of places you don't want any IEDs spawning
